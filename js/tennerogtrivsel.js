@@ -4,6 +4,7 @@
 * @author Asbjørn Aarrestad - asbjorn@aarrestad.com
 */
 
+/** Called on page reload to keep same page as was reloaded*/
 $(document).ready(function() {
     var pageContent = location.hash.replace("#", "");
     if(location.hash == '' || location.hash == '#') {
@@ -12,12 +13,7 @@ $(document).ready(function() {
     loadContent(pageContent);
 });
 
-function loadContent(pageContent) {
-    $(".nav").find(".active").removeClass("active");
-    $("#"+pageContent).addClass("active");
-    $('#pageContent').load(pageContent+".html");
-};
-
+/** load content when hash changes */
 window.onhashchange = function() {
     var pageContent = location.hash.replace("#", "");
     if(location.hash == '' || location.hash == '#') {
@@ -25,6 +21,15 @@ window.onhashchange = function() {
     }
     loadContent(pageContent);
 }
+
+/** load content based on tag */
+function loadContent(pageContent) {
+    if($("#"+pageContent).attr("id") !== undefined) {
+        $(".nav").find(".active").removeClass("active");
+        $("#"+pageContent).addClass("active");
+        $('#pageContent').load(pageContent+".html");
+    }
+};
 
 function initMap() {
 
