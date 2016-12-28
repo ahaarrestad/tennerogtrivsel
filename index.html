@@ -13,7 +13,7 @@
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <meta name="google-site-verification" content="fqXVSKxrgxe7JTB16lMgawqXBtDrTzmXAWyDLWmPzi4" />
+    <meta name="google-site-verification" content="fqXVSKxrgxe7JTB16lMgawqXBtDrTzmXAWyDLWmPzi4"/>
 </head>
 <body>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFZCHBsL_owWsNDlTOD91LwjS-uVEfgZ0"></script>
@@ -64,37 +64,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-$(".nav a").on("click", function(){
-   $(".nav").find(".active").removeClass("active");
-   $(this).parent().addClass("active");
-   $('#pageContent').load($(".nav").find(".active").attr("id")+".html");
-  });
-
-</script>
-<script type="text/javascript">
-$(document).ready(function() {
-    var pageContent = location.hash.replace("#", "")+".html";
-    if(location.hash == '' || location.hash == '#') {
-        pageContent = "kontakt.html";
-    }
-    $('#pageContent').load(pageContent);
-    /**
-    if (location.hash !== '') $('a[href="' + location.hash + '"]').tab('show');
-    return $('a[data-toggle="tab"]').on('shown', function(e) {
-      return location.hash = $(e.target).attr('href').substr(1);
-    });
-
-    */
-});
-
-/** $(function(){
-  var hash = window.location.hash;
-  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
-  $('#pageContent').load($("__"+ end_id+".html");
-}); */
-
-</script>
+<script src="js/tennerogtrivsel.js"></script>
+<!-- Google Analytics -->
 <script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -103,43 +74,11 @@ $(document).ready(function() {
 
   ga('create', 'UA-40203947-1', 'auto');
   ga('send', 'pageview');
-</script>
 
+</script>
+<!-- google maps -->
 <script>
-        function initMap() {
 
-            var location = new google.maps.LatLng(58.954524, 5.72907);
-
-            var mapCanvas = document.getElementById('map');
-            var mapOptions = {
-                center: location,
-                zoom: 15,
-                panControl: false,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var map = new google.maps.Map(mapCanvas, mapOptions);
-
-            var marker=new google.maps.Marker({
-                position:new google.maps.LatLng(58.954154, 5.735028),
-                url: '/',
-                animation:google.maps.Animation.DROP
-            });
-
-            var contentString = '<div class="info-window">'
-            + 'Tenner og Trivsel'
-            + '<br>Armauer Hansens vei 11'
-            + '<br>4011 Stavanger';
-
-            var infowindow = new google.maps.InfoWindow({
-                content: contentString,
-                maxWidth: 400
-            });
-            marker.addListener('click', function () {
-                infowindow.open(map, marker);
-            });
-            marker.setMap(map);
-        }
 </script>
-
 </body>
 </html>
