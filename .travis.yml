@@ -8,3 +8,4 @@ deploy:
   skip_cleanup: true
   acl: public_read
   region: eu-west-1
+  cache_control: "max-age=3600"
