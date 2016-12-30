@@ -28,6 +28,8 @@ function loadContent(pageContent) {
         $(".nav").find(".active").removeClass("active");
         $("#"+pageContent).addClass("active");
         $('#pageContent').load(pageContent+".html");
+        ga('set', 'page', '/' + pageContent + '.html');
+        ga('send', 'pageview');
     }
 };
 
