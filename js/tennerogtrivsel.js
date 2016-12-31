@@ -7,34 +7,60 @@
 /** Called on page reload to keep same page as was reloaded*/
 $(document).ready(function() {
     var pageContent = location.hash.replace("#", "");
-    if(location.hash == '' || location.hash == '#') {
-        pageContent = "kontakt";
+    if(pageContent == '') {
+        pageContent = getUrlParameter('page');
+    }
+    if(pageContent == undefined) {
+        pageContent = "";
     }
     loadContent(pageContent);
 });
 
+/** Disable clicks is javascript is enabled*/
+$(document).on('click', 'a', function(e) {
+    e.preventDefault();
+});
+
 /** load content when hash changes */
 window.onhashchange = function() {
-    var pageContent = location.hash.replace("#", "");
-    if(location.hash == '' || location.hash == '#') {
-        pageContent = "kontakt";
-    }
-    loadContent(pageContent);
+    loadContent(location.hash.replace("#", ""));
 }
 
 /** load content based on tag */
 function loadContent(pageContent) {
-    if($("#"+pageContent).attr("id") !== undefined) {
+     if(pageContent == '') {
+        /** default to frontpage */
+        pageContent = "kontakt";
+     }
+     if($("#"+pageContent).attr("id") !== undefined) {
         $(".nav").find(".active").removeClass("active");
         $("#"+pageContent).addClass("active");
         $('#pageContent').load(pageContent+".html");
-        ga('set', 'page', '/' + pageContent + '.html');
-        ga('send', 'pageview');
+
+        /* Avoid logging to google analytics from development machine */
+        if(location.hostname !== 'localhost') {
+            ga('set', 'page', '/' + pageContent + '.html');
+            ga('send', 'pageview');
+        }
+    }
+};
+
+function getUrlParameter(sParam) {
+    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
     }
 };
 
 function initMap() {
-
     var location = new google.maps.LatLng(58.954524, 5.72907);
 
     var mapCanvas = document.getElementById('map');
