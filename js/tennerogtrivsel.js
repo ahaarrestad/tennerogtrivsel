@@ -39,7 +39,7 @@ function loadContent(pageContent) {
 
         /* Avoid logging to google analytics from development machine */
         if(location.hostname !== 'localhost') {
-            ga('set', 'page', '/?page=' + pageContent);
+            ga('set', 'page', '/index.html?page=' + pageContent);
             ga('send', 'pageview');
         }
     }
