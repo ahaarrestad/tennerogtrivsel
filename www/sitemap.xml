@@ -5,23 +5,23 @@
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
 <url>
-  <loc>http://www.tennerogtrivsel.no/</loc>
+  <loc>https://www.tennerogtrivsel.no/</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://www.tennerogtrivsel.no/index.html?page=kontakt</loc>
+  <loc>https://www.tennerogtrivsel.no/index.html?page=kontakt</loc>
   <changefreq>daily</changefreq>
 </url>
 <url>
-  <loc>http://www.tennerogtrivsel.no/index.html?page=behandlingstilbud</loc>
+  <loc>https://www.tennerogtrivsel.no/index.html?page=behandlingstilbud</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.tennerogtrivsel.no/index.html?page=trygdeordninger</loc>
+  <loc>https://www.tennerogtrivsel.no/index.html?page=trygdeordninger</loc>
   <changefreq>weekly</changefreq>
 </url>
 <url>
-  <loc>http://www.tennerogtrivsel.no/index.html?page=omoss</loc>
+  <loc>https://www.tennerogtrivsel.no/index.html?page=omoss</loc>
   <changefreq>weekly</changefreq>
 </url>
 </urlset>
