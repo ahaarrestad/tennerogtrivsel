@@ -1,7 +1,5 @@
 /**
 * scripts for "Tenner og Trivsel" webpage.
-*
-* @author Asbjørn Aarrestad - asbjorn@aarrestad.com
 */
 
 /** Called on page reload to keep same page as was reloaded*/
